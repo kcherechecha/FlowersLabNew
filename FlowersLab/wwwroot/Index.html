@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Flowers</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h1>Flowers</h1>
+    <h3>Add Flower</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addFlower()">
+        <input class="textbox" type="text" id="add-name" placeholder="Name">
+        <input class="textbox" type="text" id="add-description" placeholder="Description">
+        <input class="MyButton" type="submit" value="Add">
+    </form>
+
+    <div id="editFlower">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateFlower()">
+            <input type="hidden" id="edit-id">
+            <input class="textbox" type="text" id="edit-name">
+            <input class="textbox" type="text" id="edit-description">
+            <input class="MyButton" type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006; </a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        <tbody id="flowers"></tbody>
+    </table>
+    <script src="js/lab2.js" asp-append-version="true"></script>
+
+    <script type="text/javascript">
+        getFlowers();
+    </script>
+</body>
+</html>
