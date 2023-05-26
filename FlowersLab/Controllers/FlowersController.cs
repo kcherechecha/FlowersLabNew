@@ -110,6 +110,14 @@ namespace FlowersLab.Controllers
           {
               return Problem("Entity set 'FlowerShopContext.Flowers'  is null.");
           }
+
+          bool flowerExists = await _context.Flowers.AnyAsync(f => f.FlowerName == flower.FlowerName);
+          if (flowerExists)
+          {
+              ModelState.AddModelError("FlowerName", "A flower with the same name already exists.");
+              return BadRequest(ModelState);
+          }
+
             _context.Flowers.Add(flower);
             await _context.SaveChangesAsync();
 

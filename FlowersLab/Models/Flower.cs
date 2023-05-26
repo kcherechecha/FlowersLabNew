@@ -1,4 +1,6 @@
-﻿namespace FlowersLab.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FlowersLab.Models
 {
     public class Flower
     {
@@ -8,7 +10,9 @@
         }
 
         public int FlowerId { get; set; }
+        [Required]
         public string FlowerName { get; set; }
+        [Required]
         public string FlowerDescription { get; set; }
         public virtual ICollection<Bouquet> Bouquets { get; set; }
     }

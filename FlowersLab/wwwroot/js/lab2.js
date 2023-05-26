@@ -13,8 +13,8 @@ function addFlower() {
     const addDescriptionTextbox = document.getElementById('add-description');
 
     const flower = {
-        name: addNameTextbox.value.trim(),
-        description: addDescriptionTextbox.value.trim(),
+        FlowerName: addNameTextbox.value.trim(),
+        FlowerDescription: addDescriptionTextbox.value.trim(),
     };
 
     fetch(uri, {
@@ -51,12 +51,16 @@ function displayEditForm(id) {
     document.getElementById('editForm').style.display = 'block';
 }
 
+function closeInput() {
+    document.getElementById('editForm').style.display = 'none';
+}
+
 function updateFlower() {
     const flowerId = document.getElementById('edit-id').value;
     const flower = {
-        id: parseInt(flowerId, 10),
-        name: document.getElementById('edit-name').value.trim(),
-        description: document.getElementById('edit-description').value.trim(),
+        FlowerId: parseInt(flowerId, 10),
+        FlowerName: document.getElementById('edit-name').value.trim(),
+        FlowerDescription: document.getElementById('edit-description').value.trim(),
     };
 
     fetch(`${uri}/${flowerId}`, {
@@ -67,15 +71,15 @@ function updateFlower() {
         },
         body: JSON.stringify(flower)
     })
-        .then(() => getFlowers())
+        .then(() => {
+            getFlowers(); document.getElementById('edit-name').value = '';
+            document.getElementById('edit-description').value = '';
+        })
         .catch(error => console.error('Unable to update flower.', error));
     closeInput();
     return false;
 }
 
-function closeInput() {
-    document.getElementById('editForm').style.display = `none`;
-}
 
 function _displayFlowers(data) {
     const tBody = document.getElementById('flowers');

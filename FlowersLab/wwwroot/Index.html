@@ -3,34 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Flowers</title>
-    <link rel="stylesheet" href="css/site.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Manrope:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
+
 </head>
 <body>
     <h1>Flowers</h1>
-    <h3>Add Flower</h3>
-    <form action="javascript:void(0);" method="POST" onsubmit="addFlower()">
-        <input class="textbox" type="text" id="add-name" placeholder="Name">
-        <input class="textbox" type="text" id="add-description" placeholder="Description">
-        <input class="MyButton" type="submit" value="Add">
-    </form>
+        <h3 class="form-name">Add Flower</h3>
+        <div class="add-form">
+            <form action="javascript:void(0);" method="POST" onsubmit="addFlower()">
+                <input class="textbox" type="text" id="add-name" placeholder="Name">
+                <input class="textbox" type="text" id="add-description" placeholder="Description">
+                <input class="add-button" type="submit" value="Add">
+            </form>
+        </div>
 
-    <div id="editFlower">
-        <h3>Edit</h3>
-        <form action="javascript:void(0);" onsubmit="updateFlower()">
-            <input type="hidden" id="edit-id">
-            <input class="textbox" type="text" id="edit-name">
-            <input class="textbox" type="text" id="edit-description">
-            <input class="MyButton" type="submit" value="Save">
-            <a onclick="closeInput()" aria-label="Close">&#10006; </a>
-        </form>
-    </div>
+        <div id="editFlower">
+            <h3 class="form-name">Edit</h3>
+            <div class="edit-form">
+                <form action="javascript:void(0);" onsubmit="updateFlower()">
+                    <input type="hidden" id="edit-id">
+                    <input class="textbox" type="text" id="edit-name">
+                    <input class="textbox" type="text" id="edit-description">
+                    <input class="edit-button" type="submit" value="Save">
+                    <!--<input onclick="closeInput()">&#10006; </input>-->
+                </form>
+            </div>
+        </div>
 
     <p id="counter"></p>
 
     <table class="table">
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
+        <tr class="table-header">
+            <th  class="column">Name</th>
+            <th  class="column">Description</th>
         </tr>
         <tbody id="flowers"></tbody>
     </table>

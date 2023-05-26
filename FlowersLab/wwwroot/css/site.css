@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Manrope:wght@300&display=swap');
+
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -14,5 +16,119 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    margin-left: 50px;
+    margin-right:50px;
+    background-color: #e3e2df;
 }
+
+h1 {
+    text-align: center;
+    font-family: "Great Vibes", cursive;
+    font-size: 80px;
+    color: #9a1750;
+}
+
+.form-name {
+    margin-top: 40px;
+    margin-left: 370px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.add-form, .edit-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh;*/
+}
+
+.textbox {
+    width: 300px;
+    height: 30px;
+    border-radius: 30px;
+    /*padding-left: 20px;
+    padding-right: 20px;*/
+    padding: 10px 17px;
+    margin: auto 5px;
+    font-size: 17px;
+}
+
+h3 {
+    font-family: 'Manrope', sans-serif;
+}
+
+.add-button, .edit-button, button {
+    margin: auto 5px;
+    padding: 17px 40px;
+    border-radius: 50px;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    /*text-transform: uppercase;*/
+    font-size: 15px;
+    transition: all .5s ease;
+}
+
+    .add-button:hover, .edit-button:hover, button:hover {
+        letter-spacing: 3px;
+        /*background-color: hsl(261deg 80% 48%);*/
+        background-color: #9a1750;
+        color: hsl(0, 0%, 100%);
+        /*box-shadow: rgb(93 24 220) 0px 7px 29px 0px;*/
+        box-shadow: rgba(154, 23, 80, 0.8) 0px 7px 29px 0px, rgba(154, 23, 132, 0.8) 0px 7px 29px 0px;
+    }
+
+    .add-button:active, .edit-button:active, button:active {
+        letter-spacing: 3px;
+        background-color: hsl(261deg 80% 48%);
+        color: hsl(0, 0%, 100%);
+        box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+        transform: translateY(10px);
+        transition: 100ms;
+    }
+
+.table {
+    margin-top: 50px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-header {
+    background-color: rgba(154, 23, 80, 0.3);
+}
+
+.column {
+    width: 50%;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid rgba(154, 23, 80, 0.3);
+}
+
+th {
+    /*background-color: #f2f2f2;*/
+    /*background-color: rgba(154, 23, 80, 0.3);*/
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+}
+
+tbody {
+    border: 1px solid rgba(154, 23, 80, 0.3);
+}
+
+    tbody tr {
+        /*background-color: #f2f2f2;*/ /* Set your desired background color here */
+        /*background-color: #eee2dc;*/
+         /*background-color: #e3afbc;*/
+        background-color: #f8d4df;
+        /*background-color: #c7c7c7;*/
+        font-family: 'Manrope', sans-serif;
+        font-size: 20px;
+    }
+
+    tbody td {
+        padding: 10px;
+        border: 1px solid rgba(154, 23, 80, 0.3);
+    }
