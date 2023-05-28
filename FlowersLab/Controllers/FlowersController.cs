@@ -80,6 +80,13 @@ namespace FlowersLab.Controllers
                 return BadRequest();
             }
 
+            bool flowerExists = await _context.Flowers.AnyAsync(f => f.FlowerName == flower.FlowerName);
+            if (flowerExists)
+            {
+                ModelState.AddModelError("FlowerName", "A flower with the same name already exists.");
+                return BadRequest(ModelState);
+            }
+
             _context.Entry(flower).State = EntityState.Modified;
 
             try
